@@ -17,7 +17,7 @@ let mapleader=";"
 " color scheme
 let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme molokai
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -62,7 +62,9 @@ set shiftwidth=8    " indent width
 set noexpandtab
 
 " tpope/vim-markdown
+
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+"au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -110,6 +112,7 @@ autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 " tabbar
 let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1
+
 
 hi Tb_Normal guifg=white ctermfg=white
 hi Tb_Changed guifg=green ctermfg=green
