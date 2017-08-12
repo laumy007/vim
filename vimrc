@@ -8,7 +8,6 @@ set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 filetype plugin indent on
 
 " enable syntax hightlight and completion
-syntax on
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
 "--------
@@ -16,13 +15,22 @@ let mapleader=";"
 "--------
 " color scheme
 let g:solarized_termcolors=256
-set background=dark
-colorscheme molokai
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
+
+
+"需要开启256色支持，才能设置background
+set t_Co=256
+syntax enable
+syntax on
+set background=light
+"set background=light
+colorscheme molokai
+"colorscheme solarized
+
 
 " search
 set incsearch
@@ -60,6 +68,8 @@ set shiftwidth=8    " indent width
 " set smarttab
 " set expandtab       " expand tab to space
 set noexpandtab
+
+
 
 " tpope/vim-markdown
 
@@ -345,3 +355,4 @@ cmap hexon %!xxd
 cmap hexoff %!xxd -r
 
 autocmd VimEnter *.md MarkdownPreview
+
